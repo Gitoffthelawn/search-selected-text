@@ -21,9 +21,9 @@
 
 3. Build
     ```bash
-    npm install -D @webextension-toolbox/webextension-toolbox
-    npx webextension-toolbox build firefox
+    npm run build <vendor>
     ```
+    For a list of vendors [refer](https://github.com/webextension-toolbox/webextension-toolbox?tab=readme-ov-file#examples) 
 
 ## Docs
 
