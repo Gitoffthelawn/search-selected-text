@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@webextension-toolbox/webextension-toolbox": "^7.1.1"
+  }
+}

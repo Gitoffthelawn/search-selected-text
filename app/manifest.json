@@ -1,0 +1,61 @@
+{
+  "manifest_version": 2,
+  "name": "Search Selected Text",
+  "version": "1.0",
+  "description": "Searches the selected text using pre-defined search engines.",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "icons": {
+    "16": "images/icon_16.png",
+    "48": "images/icon_32.png",
+    "128": "images/icon_128.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ]
+  },
+  "commands": {
+    "search-google": {
+      "suggested_key": {
+        "default": "Alt+X"
+      },
+      "description": "Search selected text on Google"
+    },
+    "search-youtube": {
+      "suggested_key": {
+        "default": "Alt+Y"
+      },
+      "description": "Search selected text on YouTube"
+    },
+    "search-oxford": {
+      "suggested_key": {
+        "default": "Alt+O"
+      },
+      "description": "Search selected text on Oxford Dictionary"
+    },
+    "search-letterboxd": {
+      "suggested_key": {
+        "default": "Alt+L"
+      },
+      "description": "Search selected text on Letterboxd"
+    },
+    "search-amazon": {
+      "suggested_key": {
+        "default": "Alt+Z"
+      },
+      "description": "Search selected text on Amazon India"
+    },
+    "search-1337x": {
+      "suggested_key": {
+        "default": "Alt+Shift+1"
+      },
+      "description": "Search selected text on 1337x"
+    }
+  }
+}
+
