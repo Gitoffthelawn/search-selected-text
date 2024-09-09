@@ -46,8 +46,6 @@ const searchFunctions = {
     ),
   "search-amazon": (tab, selection) =>
     searchWebsite("https://www.amazon.in/s?k=clipboard", tab, selection),
-  "search-imdb": (tab, selection) =>
-    searchWebsite("https://www.imdb.com/find?q=clipboard", tab, selection),
   "search-spotify": (tab, selection) =>
     searchWebsite("https://open.spotify.com/search/clipboard", tab, selection),
 };
@@ -70,22 +68,22 @@ function onContextMenuClick(info, tab) {
 
 // Create context menus
 const customMenuText = {
-  "search-duckduckgo": "Search with DuckDuckGo",
-  "search-chatgpt": "Search with ChatGPT",
-  "search-oxford": "Search with Oxford Dictionary",
-  "search-imdb": "Search with IMDb",
-  "search-github": "Search with GitHub",
-  "search-protonmail": "Search with ProtonMail",
-  "search-googleimages": "Search with Google Images",
+  "search-duckduckgo": "DuckDuckGo Search",
+  "search-chatgpt": "ChatGPT Search",
+  "search-oxford": "Oxford Search Dictionary",
+  "search-imdb": "IMDb Search",
+  "search-github": "GitHub Search",
+  "search-protonmail": "ProtonMail Search",
+  "search-googleimages": "Image Google Search",
 };
 
 Object.keys(searchFunctions).forEach((command) => {
   const title =
     customMenuText[command] ||
-    `Search with ${command
+    `${command
       .replace("search-", "")
       .replace(/-/g, " ")
-      .replace(/^./, (m) => m.toUpperCase())}`;
+      .replace(/^./, (m) => m.toUpperCase())} Search`;
   browser.contextMenus.create({
     id: command,
     title,

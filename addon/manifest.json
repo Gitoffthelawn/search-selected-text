@@ -58,9 +58,6 @@
     "search-amazon": {
       "description": "Search on Amazon"
     },
-    "search-imdb": {
-      "description": "Search on IMDb"
-    },
     "search-spotify": {
       "description": "Search on Spotify"
     }
