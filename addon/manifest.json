@@ -14,52 +14,55 @@
   },
   "commands": {
     "search-amazon": {
-      "description": "Search on Amazon"
+      "description": "Amazon Search"
     },
     "search-chatgpt": {
       "suggested_key": {
         "default": "Alt+I"
       },
-      "description": "Search on ChatGPT"
+      "description": "ChatGPT Search"
     },
     "search-duckduckgo": {
-      "description": "Search on DuckDuckgo"
+      "description": "DuckDuckgo Search"
     },
     "search-google": {
       "suggested_key": {
         "default": "Alt+X"
       },
-      "description": "Search on Google"
+      "description": "Google Search"
     },
     "search-github": {
-      "description": "Search on GitHub"
+      "description": "GitHub Search"
     },
     "search-googleimages": {
-      "description": "Search on Google Images"
+      "description": "Google Images Search"
     },
     "search-letterboxd": {
-      "description": "Search on Letterboxd"
+      "description": "Letterboxd Search"
     },
     "search-oxford": {
       "suggested_key": {
         "default": "Alt+O"
       },
-      "description": "Search on Oxford Dictionary"
+      "description": "Oxford Dictionary Search"
     },
     "search-protonmail": {
-      "description": "Search on ProtonMail"
+      "description": "ProtonMail Search"
     },
     "search-reddit": {
-      "description": "Search on Reddit"
+      "description": "Reddit Search"
     },
     "search-spotify": {
-      "description": "Search on Spotify"
+      "description": "Spotify Search"
+    },
+    "search-wikipedia": {
+      "description": "Wikipedia Search"
     },
     "search-youtube": {
       "suggested_key": {
         "default": "Alt+Y"
       },
-      "description": "Search on YouTube"
+      "description": "YouTube Search"
     }
   }
 }

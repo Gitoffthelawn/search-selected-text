@@ -42,6 +42,12 @@ const searchFunctions = {
     searchWebsite("https://www.reddit.com/search/?q=clipboard", tab, selection),
   "search-spotify": (tab, selection) =>
     searchWebsite("https://open.spotify.com/search/clipboard", tab, selection),
+  "search-wikipedia": (tab, selection) =>
+    searchWebsite(
+      "https://en.wikipedia.org/w/index.php?search=clipboard",
+      tab,
+      selection
+    ),
   "search-youtube": (tab, selection) =>
     searchWebsite(
       "https://www.youtube.com/results?search_query=clipboard",
