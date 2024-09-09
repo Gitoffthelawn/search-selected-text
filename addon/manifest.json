@@ -13,11 +13,32 @@
     "scripts": ["scripts/background.js"]
   },
   "commands": {
+    "search-chatgpt": {
+      "suggested_key": {
+        "default": "Alt+I"
+      },
+      "description": "Search on ChatGPT"
+    },
+    "search-duckduckgo": {
+      "description": "Search on DuckDuckgo"
+    },
+    "search-github": {
+      "description": "Search on GitHub"
+    },
+    "search-protonmail": {
+      "description": "Search on ProtonMail"
+    },
+    "search-reddit": {
+      "description": "Search on Reddit"
+    },
     "search-google": {
       "suggested_key": {
         "default": "Alt+X"
       },
       "description": "Search on Google"
+    },
+    "search-googleimages": {
+      "description": "Search on Google Images"
     },
     "search-youtube": {
       "suggested_key": {
@@ -36,6 +57,12 @@
     },
     "search-amazon": {
       "description": "Search on Amazon"
+    },
+    "search-imdb": {
+      "description": "Search on IMDb"
+    },
+    "search-spotify": {
+      "description": "Search on Spotify"
     }
   }
 }

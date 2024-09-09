@@ -1,7 +1,31 @@
 // Define search functions
 const searchFunctions = {
+  "search-chatgpt": (tab, selection) =>
+    searchWebsite(
+      "https://chat.openai.com/?model=gpt-4&q=clipboard",
+      tab,
+      selection
+    ),
+  "search-duckduckgo": (tab, selection) =>
+    searchWebsite("https://duckduckgo.com/?q=clipboard&t=ffab", tab, selection),
+  "search-github": (tab, selection) =>
+    searchWebsite(
+      "https://github.com/search?q=clipboard&type=repositories",
+      tab,
+      selection
+    ),
+  "search-protonmail": (tab, selection) =>
+    searchWebsite(
+      "https://mail.proton.me/u/0/all-mail#keyword=clipboard",
+      tab,
+      selection
+    ),
+  "search-reddit": (tab, selection) =>
+    searchWebsite("https://www.reddit.com/search/?q=clipboard", tab, selection),
   "search-google": (tab, selection) =>
     searchWebsite("https://www.google.com/search?q=clipboard", tab, selection),
+  "search-googleimages": (tab, selection) =>
+    searchWebsite("https://www.google.com/images?q=clipboard", tab, selection),
   "search-youtube": (tab, selection) =>
     searchWebsite(
       "https://www.youtube.com/results?search_query=clipboard",
@@ -22,6 +46,10 @@ const searchFunctions = {
     ),
   "search-amazon": (tab, selection) =>
     searchWebsite("https://www.amazon.in/s?k=clipboard", tab, selection),
+  "search-imdb": (tab, selection) =>
+    searchWebsite("https://www.imdb.com/find?q=clipboard", tab, selection),
+  "search-spotify": (tab, selection) =>
+    searchWebsite("https://open.spotify.com/search/clipboard", tab, selection),
 };
 
 // General search function
@@ -41,13 +69,26 @@ function onContextMenuClick(info, tab) {
 }
 
 // Create context menus
+const customMenuText = {
+  "search-duckduckgo": "Search with DuckDuckGo",
+  "search-chatgpt": "Search with ChatGPT",
+  "search-oxford": "Search with Oxford Dictionary",
+  "search-imdb": "Search with IMDb",
+  "search-github": "Search with GitHub",
+  "search-protonmail": "Search with ProtonMail",
+  "search-googleimages": "Search with Google Images",
+};
+
 Object.keys(searchFunctions).forEach((command) => {
-  browser.contextMenus.create({
-    id: command,
-    title: `Search with ${command
+  const title =
+    customMenuText[command] ||
+    `Search with ${command
       .replace("search-", "")
       .replace(/-/g, " ")
-      .replace(/^./, (m) => m.toUpperCase())}`,
+      .replace(/^./, (m) => m.toUpperCase())}`;
+  browser.contextMenus.create({
+    id: command,
+    title,
     contexts: ["selection"],
     icons: {
       48: `icons/brands/${command.replace("search-", "")}-colorful.svg`,
