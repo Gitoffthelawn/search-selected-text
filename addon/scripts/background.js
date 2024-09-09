@@ -1,5 +1,7 @@
 // Define search functions
 const searchFunctions = {
+  "search-amazon": (tab, selection) =>
+    searchWebsite("https://www.amazon.com/s?k=clipboard", tab, selection),
   "search-chatgpt": (tab, selection) =>
     searchWebsite(
       "https://chat.openai.com/?model=gpt-4&q=clipboard",
@@ -8,9 +10,25 @@ const searchFunctions = {
     ),
   "search-duckduckgo": (tab, selection) =>
     searchWebsite("https://duckduckgo.com/?q=clipboard&t=ffab", tab, selection),
+  "search-google": (tab, selection) =>
+    searchWebsite("https://www.google.com/search?q=clipboard", tab, selection),
   "search-github": (tab, selection) =>
     searchWebsite(
       "https://github.com/search?q=clipboard&type=repositories",
+      tab,
+      selection
+    ),
+  "search-googleimages": (tab, selection) =>
+    searchWebsite("https://www.google.com/images?q=clipboard", tab, selection),
+  "search-letterboxd": (tab, selection) =>
+    searchWebsite(
+      "https://letterboxd.com/search/clipboard/?adult",
+      tab,
+      selection
+    ),
+  "search-oxford": (tab, selection) =>
+    searchWebsite(
+      "https://www.oxfordlearnersdictionaries.com/definition/english/clipboard",
       tab,
       selection
     ),
@@ -22,32 +40,14 @@ const searchFunctions = {
     ),
   "search-reddit": (tab, selection) =>
     searchWebsite("https://www.reddit.com/search/?q=clipboard", tab, selection),
-  "search-google": (tab, selection) =>
-    searchWebsite("https://www.google.com/search?q=clipboard", tab, selection),
-  "search-googleimages": (tab, selection) =>
-    searchWebsite("https://www.google.com/images?q=clipboard", tab, selection),
+  "search-spotify": (tab, selection) =>
+    searchWebsite("https://open.spotify.com/search/clipboard", tab, selection),
   "search-youtube": (tab, selection) =>
     searchWebsite(
       "https://www.youtube.com/results?search_query=clipboard",
       tab,
       selection
     ),
-  "search-oxford": (tab, selection) =>
-    searchWebsite(
-      "https://www.oxfordlearnersdictionaries.com/definition/english/clipboard",
-      tab,
-      selection
-    ),
-  "search-letterboxd": (tab, selection) =>
-    searchWebsite(
-      "https://letterboxd.com/search/clipboard/?adult",
-      tab,
-      selection
-    ),
-  "search-amazon": (tab, selection) =>
-    searchWebsite("https://www.amazon.in/s?k=clipboard", tab, selection),
-  "search-spotify": (tab, selection) =>
-    searchWebsite("https://open.spotify.com/search/clipboard", tab, selection),
 };
 
 // General search function
@@ -68,13 +68,13 @@ function onContextMenuClick(info, tab) {
 
 // Create context menus
 const customMenuText = {
-  "search-duckduckgo": "DuckDuckGo Search",
   "search-chatgpt": "ChatGPT Search",
-  "search-oxford": "Oxford Search Dictionary",
-  "search-imdb": "IMDb Search",
+  "search-duckduckgo": "DuckDuckGo Search",
   "search-github": "GitHub Search",
-  "search-protonmail": "ProtonMail Search",
   "search-googleimages": "Image Google Search",
+  "search-imdb": "IMDb Search",
+  "search-oxford": "Oxford Search Dictionary",
+  "search-protonmail": "ProtonMail Search",
 };
 
 Object.keys(searchFunctions).forEach((command) => {

@@ -13,6 +13,9 @@
     "scripts": ["scripts/background.js"]
   },
   "commands": {
+    "search-amazon": {
+      "description": "Search on Amazon"
+    },
     "search-chatgpt": {
       "suggested_key": {
         "default": "Alt+I"
@@ -22,29 +25,20 @@
     "search-duckduckgo": {
       "description": "Search on DuckDuckgo"
     },
-    "search-github": {
-      "description": "Search on GitHub"
-    },
-    "search-protonmail": {
-      "description": "Search on ProtonMail"
-    },
-    "search-reddit": {
-      "description": "Search on Reddit"
-    },
     "search-google": {
       "suggested_key": {
         "default": "Alt+X"
       },
       "description": "Search on Google"
     },
+    "search-github": {
+      "description": "Search on GitHub"
+    },
     "search-googleimages": {
       "description": "Search on Google Images"
     },
-    "search-youtube": {
-      "suggested_key": {
-        "default": "Alt+Y"
-      },
-      "description": "Search on YouTube"
+    "search-letterboxd": {
+      "description": "Search on Letterboxd"
     },
     "search-oxford": {
       "suggested_key": {
@@ -52,14 +46,20 @@
       },
       "description": "Search on Oxford Dictionary"
     },
-    "search-letterboxd": {
-      "description": "Search on Letterboxd"
+    "search-protonmail": {
+      "description": "Search on ProtonMail"
     },
-    "search-amazon": {
-      "description": "Search on Amazon"
+    "search-reddit": {
+      "description": "Search on Reddit"
     },
     "search-spotify": {
       "description": "Search on Spotify"
+    },
+    "search-youtube": {
+      "suggested_key": {
+        "default": "Alt+Y"
+      },
+      "description": "Search on YouTube"
     }
   }
 }
