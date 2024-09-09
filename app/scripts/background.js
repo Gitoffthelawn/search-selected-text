@@ -1,3 +1,30 @@
+// Define search functions
+const searchFunctions = {
+  "search-google": (tab, selection) =>
+    searchWebsite("https://www.google.com/search?q=clipboard", tab, selection),
+  "search-youtube": (tab, selection) =>
+    searchWebsite(
+      "https://www.youtube.com/results?search_query=clipboard",
+      tab,
+      selection
+    ),
+  "search-oxford": (tab, selection) =>
+    searchWebsite(
+      "https://www.oxfordlearnersdictionaries.com/definition/english/clipboard",
+      tab,
+      selection
+    ),
+  "search-letterboxd": (tab, selection) =>
+    searchWebsite(
+      "https://letterboxd.com/search/clipboard/?adult",
+      tab,
+      selection
+    ),
+  "search-amazon": (tab, selection) =>
+    searchWebsite("https://www.amazon.in/s?k=clipboard", tab, selection),
+};
+
+// General search function
 function searchWebsite(urlTemplate, tab, selection) {
   if (selection) {
     let query = encodeURIComponent(selection);
@@ -6,124 +33,38 @@ function searchWebsite(urlTemplate, tab, selection) {
   }
 }
 
-function searchGoogle(tab, selection) {
-  searchWebsite("https://www.google.com/search?q=clipboard", tab, selection);
-}
-
-function searchYouTube(tab, selection) {
-  searchWebsite(
-    "https://www.youtube.com/results?search_query=clipboard",
-    tab,
-    selection
-  );
-}
-
-function searchOxford(tab, selection) {
-  searchWebsite(
-    "https://www.oxfordlearnersdictionaries.com/definition/english/clipboard",
-    tab,
-    selection
-  );
-}
-
-function searchLetterboxd(tab, selection) {
-  searchWebsite(
-    "https://letterboxd.com/search/clipboard/?adult",
-    tab,
-    selection
-  );
-}
-
-function searchAmazon(tab, selection) {
-  searchWebsite("https://www.amazon.in/s?k=clipboard", tab, selection);
-}
-
+// Context menu click handler
 function onContextMenuClick(info, tab) {
   const selection = info.selectionText;
-  switch (info.menuItemId) {
-    case "search-google":
-      searchGoogle(tab, selection);
-      break;
-    case "search-youtube":
-      searchYouTube(tab, selection);
-      break;
-    case "search-oxford":
-      searchOxford(tab, selection);
-      break;
-    case "search-letterboxd":
-      searchLetterboxd(tab, selection);
-      break;
-    case "search-amazon":
-      searchAmazon(tab, selection);
-      break;
-  }
+  const command = info.menuItemId;
+  searchFunctions[command](tab, selection);
 }
 
-browser.contextMenus.create({
-  id: "search-google",
-  title: "Search with Google",
-  contexts: ["selection"],
-  icons: {
-    48: "icons/google-brands-colorful.svg",
-  },
+// Create context menus
+Object.keys(searchFunctions).forEach((command) => {
+  browser.contextMenus.create({
+    id: command,
+    title: `Search with ${command
+      .replace("search-", "")
+      .replace(/-/g, " ")
+      .replace(/^./, (m) => m.toUpperCase())}`,
+    contexts: ["selection"],
+    icons: {
+      48: `icons/brands/${command.replace("search-", "")}-colorful.svg`,
+    },
+  });
 });
 
-browser.contextMenus.create({
-  id: "search-youtube",
-  title: "Search with YouTube",
-  contexts: ["selection"],
-  icons: {
-    48: "icons/youtube-brands-colorful.svg",
-  },
-});
-
-browser.contextMenus.create({
-  id: "search-oxford",
-  title: "Search with Oxford",
-  contexts: ["selection"],
-  icons: {
-    48: "icons/e-solid-colorful.svg",
-  },
-});
-
-browser.contextMenus.create({
-  id: "search-letterboxd",
-  title: "Search with Letterboxd",
-  contexts: ["selection"],
-  icons: {
-    48: "icons/letterboxd-brands-colorful.svg",
-  },
-});
-
-browser.contextMenus.create({
-  id: "search-amazon",
-  title: "Search with Amazon India",
-  contexts: ["selection"],
-  icons: {
-    48: "icons/amazon-brands-colorful.svg",
-  },
-});
-
+// Add context menu click listener
 browser.contextMenus.onClicked.addListener(onContextMenuClick);
 
+// Add command listener
 browser.commands.onCommand.addListener((command) => {
   browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
     browser.tabs
       .executeScript(tabs[0].id, {
         code: "window.getSelection().toString();",
       })
-      .then((selection) => {
-        if (command === "search-google") {
-          searchGoogle(tabs[0], selection[0]);
-        } else if (command === "search-youtube") {
-          searchYouTube(tabs[0], selection[0]);
-        } else if (command === "search-oxford") {
-          searchOxford(tabs[0], selection[0]);
-        } else if (command === "search-letterboxd") {
-          searchLetterboxd(tabs[0], selection[0]);
-        } else if (command === "search-amazon") {
-          searchAmazon(tabs[0], selection[0]);
-        }
-      });
+      .then((selection) => searchFunctions[command](tabs[0], selection[0]));
   });
 });

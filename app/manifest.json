@@ -1,22 +1,16 @@
 {
   "manifest_version": 2,
   "name": "Search Selected Text",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Searches the selected text using pre-defined search engines.",
   "icons": {
     "16": "icons/icon_16.png",
     "48": "icons/icon_48.png",
     "128": "icons/icon_128.png"
   },
-  "permissions": [
-    "tabs",
-    "activeTab",
-    "contextMenus"
-  ],
+  "permissions": ["tabs", "activeTab", "contextMenus"],
   "background": {
-    "scripts": [
-      "scripts/background.js"
-    ]
+    "scripts": ["scripts/background.js"]
   },
   "commands": {
     "search-google": {
@@ -45,4 +39,3 @@
     }
   }
 }
-
