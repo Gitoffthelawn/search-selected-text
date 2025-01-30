@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Search Selected Text",
-  "version": "2.0",
+  "version": "2.1",
   "description": "Searches the selected text using pre-defined search engines.",
   "icons": {
     "16": "icons/icon_16.png",
@@ -17,9 +17,6 @@
       "description": "Amazon Search"
     },
     "search-chatgpt": {
-      "suggested_key": {
-        "default": "Alt+I"
-      },
       "description": "ChatGPT Search"
     },
     "search-duckduckgo": {
@@ -35,6 +32,9 @@
       "description": "GitHub Search"
     },
     "search-googleimages": {
+      "suggested_key": {
+        "default": "Alt+I"
+      },
       "description": "Google Images Search"
     },
     "search-letterboxd": {
