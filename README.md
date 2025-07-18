@@ -1,26 +1,26 @@
-<!-- ![Typing SVG](https://readme-typing-svg.demolab.com?font=JetbrainsMono&weight=700&size=50&pause=1000&color=39FB01&center=true&vCenter=true&random=false&width=1100&height=84&lines=%3E+Search+Selected+Text;Using+Pre-defined+Search+Engines) -->
+# <img src="https://github.com/user-attachments/assets/95a638a6-3a58-4109-b1c7-0258def2998e" width="45" align="left"> srch
 
-<div align = "center">
+<div align="left">
 
-<h1 style="display: flex; align-items: center;">
-  <img src="./addon/icons/icon_32.png" alt="Icon" style="margin-right: 20px; height: 32px; width: 32px;">
-    Search Selected Text
-</h1>
-
-<p align="center">
-  <img src="https://img.shields.io/github/stars/dpi0/helix-firefox?style=flat-square&color=yellow" alt="Stars">
-  <img src="https://img.shields.io/github/forks/dpi0/helix-firefox?style=flat-square" alt="Forks">
-  <img src="https://img.shields.io/github/contributors/dpi0/helix-firefox?style=flat-square&color=pink" alt="Contributors">
-  <img src="https://img.shields.io/github/license/dpi0/helix-firefox?style=flat-square" alt="License">
+<p align="left">
+  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/dpi0/srch-firefox/ci.yml?branch=main">
+  <img alt="GitHub Forks" src="https://img.shields.io/github/forks/dpi0/srch-firefox?style=flat">
+  <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/dpi0/srch-firefox?style=flat&color=pink">
+  <img alt="GitHub License" src="https://img.shields.io/github/license/dpi0/srch-firefox">
 </p>
 
 <h4>Use Pre-defined Search Engines to Search Any Selected Text</h4>
 
-[<img src="https://labels.tahoe.be/firefox_download_dark.svg" height="53" alt="Download Helix for Firefox">](https://addons.mozilla.org/firefox/addon/simple-search-selected-text/)
+<a href="https://addons.mozilla.org/firefox/addon/bynd">
+  <img src="https://labels.tahoe.be/firefox_download_dark.svg" alt="Get it on Firefox" width="120">
+</a>
+
+</p>
 
 </div>
 
-![demo-screenshot](./screenshot.png)
+<img width="600" height="600" alt="screenshot" src="https://github.com/user-attachments/assets/59f634c1-e9ee-4437-865f-7a66c3ba296d" />
+
 
 ## Usage
 
@@ -32,33 +32,24 @@
 
 Currently supports the following search engines and services:
 
-- Amazon
-- ChatGPT
-- DuckDuckGo
-- GitHub
-- Google
-- Google Images
-- IMDb
-- Letterboxd
-- Oxford Dictionary
-- ProtonMail
-- Reddit
-- Spotify
-- Wikipedia
-- YouTube
+| Search Engine     | Default Keybind | Search URL                                                                                                                                   |
+| ----------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ChatGPT           | —               | [`https://chat.openai.com/?model=gpt-4&q=query`](https://chat.openai.com/?model=gpt-4&q=query)                                               |
+| DuckDuckGo        | —               | [`https://duckduckgo.com/?q=query&t=ffab`](https://duckduckgo.com/?q=query&t=ffab)                                                           |
+| GitHub            | —               | [`https://github.com/search?q=query&type=repositories`](https://github.com/search?q=query&type=repositories)                                 |
+| Google            | `Alt+X`         | [`https://www.google.com/search?udm=14&q=query&num=50`](https://www.google.com/search?udm=14&q=query&num=50)                                 |
+| Google Images     | `Alt+I`         | [`https://www.google.com/search?udm=2&q=query&num=50`](https://www.google.com/search?udm=2&q=query&num=50)                                   |
+| Letterboxd        | —               | [`https://letterboxd.com/search/query/?adult`](https://letterboxd.com/search/query/?adult)                                                   |
+| Oxford Dictionary | `Alt+O`         | [`https://www.oxfordlearnersdictionaries.com/definition/english/query`](https://www.oxfordlearnersdictionaries.com/definition/english/query) |
+| Reddit            | —               | [`https://www.reddit.com/search/?q=query`](https://www.reddit.com/search/?q=query)                                                           |
+| Spotify           | —               | [`https://open.spotify.com/search/query`](https://open.spotify.com/search/query)                                                             |
+| Wikipedia         | —               | [`https://en.wikipedia.org/w/index.php?search=query`](https://en.wikipedia.org/w/index.php?search=query)                                     |
+| YouTube           | `Alt+Y`         | [`https://www.youtube.com/results?search_query=query`](https://www.youtube.com/results?search_query=query)                                   |
 
-More search engines and services can be added by modifying the `searchFunctions` object in the background script.
+To request a new search engine, [open a new issue](https://github.com/dpi0/srch-firefox/issues/new)!
 
-# Credits
+***Credits***
 
-Addon icon from [SVG Repo](https://www.svgrepo.com)
+Addon icon from [Iconify Design](https://icon-sets.iconify.design) — specifically `icon-park:weixin-search`
 
-Brand icons from [Simple Icons](https://simpleicons.org)
-
-## Contributing
-
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
-
-<div align="center">
-  <sub>Made with ❤️ by <a href="https://github.com/dpi0">dpi0</a></sub>
-</div>
+Search engine brand icons from [Simple Icons](https://simpleicons.org)
