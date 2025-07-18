@@ -6,7 +6,7 @@ const searchFunctions = {
     searchWebsite(
       "https://chat.openai.com/?model=gpt-4&q=clipboard",
       tab,
-      selection
+      selection,
     ),
   "search-duckduckgo": (tab, selection) =>
     searchWebsite("https://duckduckgo.com/?q=clipboard&t=ffab", tab, selection),
@@ -16,7 +16,7 @@ const searchFunctions = {
     searchWebsite(
       "https://github.com/search?q=clipboard&type=repositories",
       tab,
-      selection
+      selection,
     ),
   "search-googleimages": (tab, selection) =>
     searchWebsite("https://www.google.com/images?q=clipboard", tab, selection),
@@ -24,19 +24,19 @@ const searchFunctions = {
     searchWebsite(
       "https://letterboxd.com/search/clipboard/?adult",
       tab,
-      selection
+      selection,
     ),
   "search-oxford": (tab, selection) =>
     searchWebsite(
       "https://www.oxfordlearnersdictionaries.com/definition/english/clipboard",
       tab,
-      selection
+      selection,
     ),
   "search-protonmail": (tab, selection) =>
     searchWebsite(
       "https://mail.proton.me/u/0/all-mail#keyword=clipboard",
       tab,
-      selection
+      selection,
     ),
   "search-reddit": (tab, selection) =>
     searchWebsite("https://www.reddit.com/search/?q=clipboard", tab, selection),
@@ -46,13 +46,13 @@ const searchFunctions = {
     searchWebsite(
       "https://en.wikipedia.org/w/index.php?search=clipboard",
       tab,
-      selection
+      selection,
     ),
   "search-youtube": (tab, selection) =>
     searchWebsite(
       "https://www.youtube.com/results?search_query=clipboard",
       tab,
-      selection
+      selection,
     ),
 };
 
