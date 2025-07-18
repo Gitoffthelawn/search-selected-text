@@ -11,7 +11,11 @@ const searchFunctions = {
   "search-duckduckgo": (tab, selection) =>
     searchWebsite("https://duckduckgo.com/?q=clipboard&t=ffab", tab, selection),
   "search-google": (tab, selection) =>
-    searchWebsite("https://www.google.com/search?q=clipboard", tab, selection),
+    searchWebsite(
+      "https://www.google.com/search?udm=14&q=clipboard&num=50",
+      tab,
+      selection,
+    ),
   "search-github": (tab, selection) =>
     searchWebsite(
       "https://github.com/search?q=clipboard&type=repositories",
@@ -19,7 +23,11 @@ const searchFunctions = {
       selection,
     ),
   "search-googleimages": (tab, selection) =>
-    searchWebsite("https://www.google.com/images?q=clipboard", tab, selection),
+    searchWebsite(
+      "https://www.google.com/search?udm=2&q=clipboard&num=50",
+      tab,
+      selection,
+    ),
   "search-letterboxd": (tab, selection) =>
     searchWebsite(
       "https://letterboxd.com/search/clipboard/?adult",
