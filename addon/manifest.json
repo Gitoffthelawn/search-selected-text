@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Search Selected Text",
   "version": "2.1",
+  "name": "srch",
   "description": "Searches the selected text using pre-defined search engines.",
   "icons": {
     "16": "./icons/srch-16.png",
