@@ -1,7 +1,5 @@
 // Define search functions
 const searchFunctions = {
-  "search-amazon": (tab, selection) =>
-    searchWebsite("https://www.amazon.com/s?k=clipboard", tab, selection),
   "search-chatgpt": (tab, selection) =>
     searchWebsite(
       "https://chat.openai.com/?model=gpt-4&q=clipboard",
@@ -37,12 +35,6 @@ const searchFunctions = {
   "search-oxford": (tab, selection) =>
     searchWebsite(
       "https://www.oxfordlearnersdictionaries.com/definition/english/clipboard",
-      tab,
-      selection,
-    ),
-  "search-protonmail": (tab, selection) =>
-    searchWebsite(
-      "https://mail.proton.me/u/0/all-mail#keyword=clipboard",
       tab,
       selection,
     ),

@@ -13,9 +13,6 @@
     "scripts": ["scripts/background.js"]
   },
   "commands": {
-    "search-amazon": {
-      "description": "Amazon Search"
-    },
     "search-chatgpt": {
       "description": "ChatGPT Search"
     },
@@ -45,9 +42,6 @@
         "default": "Alt+O"
       },
       "description": "Oxford Dictionary Search"
-    },
-    "search-protonmail": {
-      "description": "ProtonMail Search"
     },
     "search-reddit": {
       "description": "Reddit Search"
