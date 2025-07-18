@@ -79,7 +79,7 @@ const customMenuText = {
   "search-github": "GitHub Search",
   "search-googleimages": "Image Google Search",
   "search-imdb": "IMDb Search",
-  "search-oxford": "Oxford Search Dictionary",
+  "search-oxford": "Oxford Dictionary Search",
   "search-protonmail": "ProtonMail Search",
 };
 
