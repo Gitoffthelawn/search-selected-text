@@ -11,7 +11,7 @@
 
 <h4>Use Pre-defined Search Engines to Search Any Selected Text</h4>
 
-<a href="https://addons.mozilla.org/firefox/addon/bynd">
+<a href="https://addons.mozilla.org/firefox/addon/srch">
   <img src="https://labels.tahoe.be/firefox_download_dark.svg" alt="Get it on Firefox" width="120">
 </a>
 
