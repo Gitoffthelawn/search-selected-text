@@ -20,7 +20,7 @@ function parseJSON(text = textarea.value) {
 
 function engineStats(data) {
   const total = data.length;
-  const disabled = data.filter((e) => e.enable === false).length;
+  const disabled = data.filter((e) => e.enabled === false).length;
   const enabled = total - disabled;
   return { enabled, disabled };
 }

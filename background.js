@@ -23,7 +23,7 @@ async function rebuildContextMenu() {
   const { engines } = await browser.storage.local.get("engines");
   if (!Array.isArray(engines)) return;
 
-  const enabled = engines.filter((e) => e.enable !== false);
+  const enabled = engines.filter((e) => e.enabled !== false);
   if (enabled.length === 0) return;
 
   browser.contextMenus.create({
@@ -48,7 +48,7 @@ browser.contextMenus.onClicked.addListener(async (info) => {
   const key = info.menuItemId.slice(5);
   const { engines } = await browser.storage.local.get("engines");
 
-  const engine = engines?.find((e) => e.key === key && e.enable !== false);
+  const engine = engines?.find((e) => e.key === key && e.enabled !== false);
   if (!engine) return;
 
   const url = engine.url.replace(
@@ -94,7 +94,7 @@ browser.runtime.onMessage.addListener(async (msg) => {
   const { engines } = await browser.storage.local.get("engines");
   if (!Array.isArray(engines)) return;
 
-  const engine = engines.find((e) => e.key === msg.key && e.enable !== false);
+  const engine = engines.find((e) => e.key === msg.key && e.enabled !== false);
   if (!engine) return;
 
   const text = await getSelection();
