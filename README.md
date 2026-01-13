@@ -19,6 +19,8 @@
 
 </div>
 
+https://github.com/user-attachments/assets/86234077-a170-48ee-b95a-425bf55f249f
+
 > [!CAUTION]
 > `v3.0.0` has breaking changes in which the addon has moved to a chorded keybind system.
 >
