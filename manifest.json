@@ -1,63 +1,31 @@
 {
   "manifest_version": 2,
   "name": "srch",
-  "version": "2.2.1",
-  "description": "Searches the selected text using pre-defined search engines.",
+  "version": "3.0.0",
+  "description": "Search selected text",
   "icons": {
     "16": "icons/srch-16.png",
     "32": "icons/srch-32.png",
     "64": "icons/srch-64.png",
     "128": "icons/srch-128.png"
   },
-  "permissions": ["tabs", "activeTab", "contextMenus"],
+  "permissions": ["tabs", "activeTab", "storage"],
   "background": {
-    "scripts": ["scripts/background.js"]
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "srch"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
   },
   "commands": {
-    "search-chatgpt": {
-      "description": "ChatGPT Search"
-    },
-    "search-duckduckgo": {
-      "description": "DuckDuckgo Search"
-    },
-    "search-google": {
+    "invoke-chord": {
       "suggested_key": {
-        "default": "Alt+X"
+        "default": "Alt+C"
       },
-      "description": "Google Search"
-    },
-    "search-github": {
-      "description": "GitHub Search"
-    },
-    "search-googleimages": {
-      "suggested_key": {
-        "default": "Alt+I"
-      },
-      "description": "Google Images Search"
-    },
-    "search-letterboxd": {
-      "description": "Letterboxd Search"
-    },
-    "search-oxford": {
-      "suggested_key": {
-        "default": "Alt+O"
-      },
-      "description": "Oxford Dictionary Search"
-    },
-    "search-reddit": {
-      "description": "Reddit Search"
-    },
-    "search-spotify": {
-      "description": "Spotify Search"
-    },
-    "search-wikipedia": {
-      "description": "Wikipedia Search"
-    },
-    "search-youtube": {
-      "suggested_key": {
-        "default": "Alt+Y"
-      },
-      "description": "YouTube Search"
+      "description": "Leader keybind for search"
     }
   }
 }

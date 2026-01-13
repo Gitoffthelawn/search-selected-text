@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>srch - options</title>
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #000000;
+        --border: #cccccc;
+        --bar-bg: #f4f4f4;
+        --btn-bg: #eaeaea;
+        --btn-accent: #000000;
+        --muted: #777777;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0e0e0e;
+          --fg: #e6e6e6;
+          --border: #333333;
+          --bar-bg: #151515;
+          --btn-bg: #1e1e1e;
+          --btn-accent: #ffffff;
+          --muted: #999999;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: monospace;
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        background: var(--bar-bg);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .info {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      button {
+        font-family: monospace;
+        font-size: 12px;
+        padding: 4px 12px;
+        background: var(--btn-bg);
+        color: var(--btn-accent);
+        border: 1px solid var(--border);
+        cursor: pointer;
+      }
+
+      button:hover {
+        border-color: var(--btn-accent);
+      }
+
+      button:active {
+        background: var(--border);
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      textarea {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        outline: none;
+        resize: none;
+        font-family: monospace;
+        font-size: 13px;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.4;
+      }
+
+      .error-text {
+        color: #d00000;
+      }
+
+      .saved-text {
+        color: #1fa21f;
+      }
+
+      .exported-imported-text {
+        color: #0074d9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="title">
+        <a
+          href="https://github.com/dpi0/srch-firefox"
+          target="_blank"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="icons/srch-32.png"
+            width="16"
+            height="16"
+            style="vertical-align: middle"
+          />
+          srch
+        </a>
+      </div>
+
+      <div class="info" id="info">0 engines · Ctrl+S to save</div>
+
+      <div class="controls">
+        <input
+          type="file"
+          id="file-input"
+          accept=".json"
+          style="display: none"
+        />
+
+        <button id="import">import</button>
+        <button id="export">export</button>
+        <button id="save" disabled>save</button>
+      </div>
+    </header>
+
+    <textarea id="rules" spellcheck="false"></textarea>
+
+    <script src="options.js"></script>
+  </body>
+</html>
