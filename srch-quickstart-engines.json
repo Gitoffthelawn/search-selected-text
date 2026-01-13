@@ -1,0 +1,59 @@
+[
+  {
+    "name": "ChatGPT",
+    "url": "https://chat.openai.com/?q=search_term",
+    "key": "c",
+    "enabled": false
+  },
+  {
+    "name": "DuckDuckGo",
+    "url": "https://duckduckgo.com/?q=search_term&t=ffab",
+    "key": "d"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/search?q=search_term&type=repositories",
+    "key": "h"
+  },
+  {
+    "name": "Google",
+    "url": "https://www.google.com/search?udm=14&q=search_term&num=50",
+    "key": "g",
+    "enabled": true
+  },
+  {
+    "name": "Google Images",
+    "url": "https://www.google.com/search?udm=2&q=search_term&num=50",
+    "key": "i"
+  },
+  {
+    "name": "Letterboxd",
+    "url": "https://letterboxd.com/search/search_term/?adult",
+    "key": "l"
+  },
+  {
+    "name": "Oxford Dictionary",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/search_term",
+    "key": "o"
+  },
+  {
+    "name": "Reddit",
+    "url": "https://www.reddit.com/search/?q=search_term",
+    "key": "r"
+  },
+  {
+    "name": "Spotify",
+    "url": "https://open.spotify.com/search/search_term",
+    "key": "s"
+  },
+  {
+    "name": "Wikipedia",
+    "url": "https://en.wikipedia.org/w/index.php?search=search_term",
+    "key": "w"
+  },
+  {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/results?search_query=search_term",
+    "key": "y"
+  }
+]
