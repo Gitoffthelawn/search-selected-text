@@ -43,7 +43,7 @@ browser.runtime.onMessage.addListener(async (msg) => {
   const { engines } = await browser.storage.local.get("engines");
   if (!Array.isArray(engines)) return;
 
-  const engine = engines.find((e) => e.key === msg.key);
+  const engine = engines.find((e) => e.key === msg.key && e.enable !== false);
   if (!engine) return;
 
   const text = await getSelection();

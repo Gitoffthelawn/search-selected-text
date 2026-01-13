@@ -18,6 +18,13 @@ function parseJSON(text = textarea.value) {
   }
 }
 
+function engineStats(data) {
+  const total = data.length;
+  const disabled = data.filter((e) => e.enable === false).length;
+  const enabled = total - disabled;
+  return { enabled, disabled };
+}
+
 function setInfo(text, extraClass = "") {
   info.textContent = text;
   info.className = "info" + (extraClass ? " " + extraClass : "");
@@ -25,9 +32,7 @@ function setInfo(text, extraClass = "") {
 
 function flashInfo(text, className) {
   clearTimeout(flashTimer);
-  info.textContent = text;
-  info.className = className;
-
+  setInfo(text, className);
   flashTimer = setTimeout(refreshUI, 1000);
 }
 
@@ -42,7 +47,14 @@ function refreshUI() {
     return;
   }
 
-  setInfo(`${data.length} engines · Ctrl+S to save`);
+  const { enabled, disabled } = engineStats(data);
+
+  let label = `${enabled} engines`;
+  if (disabled > 0) {
+    label += ` (${disabled} disabled)`;
+  }
+
+  setInfo(`${label} · Ctrl+S to save`);
 
   saveBtn.disabled = !isDirty;
   exportBtn.disabled = data.length === 0;
