@@ -49,7 +49,7 @@ browser.runtime.onMessage.addListener(async (msg) => {
   const text = await getSelection();
   if (!text) return;
 
-  const url = engine.url.replace("clipboard", encodeURIComponent(text));
+  const url = engine.url.replace("search_term", encodeURIComponent(text));
 
   browser.tabs.create({ url });
 });
