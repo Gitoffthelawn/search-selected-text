@@ -104,6 +104,7 @@ saveBtn.addEventListener("click", async () => {
   if (!data) return;
 
   await browser.storage.local.set({ engines: data });
+  browser.runtime.sendMessage({ type: "rebuild-menu" });
 
   lastSavedText = textarea.value;
   saveBtn.disabled = true;
@@ -129,6 +130,7 @@ fileInput.addEventListener("change", async () => {
   lastSavedText = "";
   refreshUI();
 
+  browser.runtime.sendMessage({ type: "rebuild-menu" });
   flashInfo("imported", "exported-imported-text");
 });
 

@@ -9,7 +9,7 @@
     "64": "icons/srch-64.png",
     "128": "icons/srch-128.png"
   },
-  "permissions": ["tabs", "activeTab", "storage"],
+  "permissions": ["tabs", "activeTab", "storage", "contextMenus"],
   "background": {
     "scripts": ["background.js"]
   },
