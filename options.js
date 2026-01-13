@@ -48,6 +48,43 @@ function refreshUI() {
   exportBtn.disabled = data.length === 0;
 }
 
+function exportFilename() {
+  const d = new Date();
+
+  const pad = (n) => String(n).padStart(2, "0");
+
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  return (
+    "srch-export-" +
+    pad(d.getHours()) +
+    "-" +
+    pad(d.getMinutes()) +
+    "-" +
+    pad(d.getSeconds()) +
+    "_" +
+    pad(d.getDate()) +
+    "-" +
+    months[d.getMonth()] +
+    "-" +
+    String(d.getFullYear()).slice(-2) +
+    ".json"
+  );
+}
+
 textarea.addEventListener("input", refreshUI);
 
 saveBtn.addEventListener("click", async () => {
@@ -94,7 +131,7 @@ exportBtn.addEventListener("click", () => {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "srch-engines.json";
+  a.download = exportFilename();
   a.click();
   URL.revokeObjectURL(url);
 
