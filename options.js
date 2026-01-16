@@ -21,8 +21,11 @@ function parseJSON(text = textarea.value) {
 function engineStats(data) {
   const total = data.length;
   const disabled = data.filter((e) => e.enabled === false).length;
+  const defaults = data.filter(
+    (e) => e.default === true && e.enabled !== false,
+  ).length;
   const enabled = total - disabled;
-  return { enabled, disabled };
+  return { enabled, disabled, defaults };
 }
 
 function setInfo(text, extraClass = "") {
@@ -47,14 +50,26 @@ function refreshUI() {
     return;
   }
 
-  const { enabled, disabled } = engineStats(data);
+  const { enabled, disabled, defaults } = engineStats(data);
 
   let label = `${enabled} engines`;
   if (disabled > 0) {
     label += ` (${disabled} disabled)`;
   }
 
-  setInfo(`${label} · Ctrl+S to save`);
+  if (defaults > 1) {
+    setInfo(
+      `multiple default engines present // try to have only one default`,
+      "warning-text",
+    );
+  } else if (defaults === 0 && enabled > 0) {
+    setInfo(
+      `no default engine present // try to have one as the default`,
+      "warning-text",
+    );
+  } else {
+    setInfo(`${label} · Ctrl+S to save`);
+  }
 
   saveBtn.disabled = !isDirty;
   exportBtn.disabled = data.length === 0;

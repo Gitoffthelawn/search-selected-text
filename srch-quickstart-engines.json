@@ -1,5 +1,11 @@
 [
   {
+    "name": "Brave",
+    "url": "https://search.brave.com/search?q=search_term",
+    "key": "b",
+    "default": true
+  },
+  {
     "name": "ChatGPT",
     "url": "https://chat.openai.com/?q=search_term",
     "key": "c",
@@ -19,7 +25,8 @@
     "name": "Google",
     "url": "https://www.google.com/search?udm=14&q=search_term&num=50",
     "key": "g",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "name": "Google Images",

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "srch",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Search selected text",
   "icons": {
     "16": "icons/srch-16.png",
@@ -26,6 +26,12 @@
         "default": "Alt+C"
       },
       "description": "Leader keybind for search"
+    },
+    "search-default": {
+      "suggested_key": {
+        "default": "Alt+X"
+      },
+      "description": "Search with default engine"
     }
   }
 }

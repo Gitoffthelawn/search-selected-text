@@ -1,6 +1,8 @@
-browser.commands.onCommand.addListener((command) => {
+browser.commands.onCommand.addListener(async (command) => {
   if (command === "invoke-chord") {
     injectChordListener();
+  } else if (command === "search-default") {
+    searchDefault();
   }
 });
 
@@ -16,6 +18,20 @@ browser.runtime.onMessage.addListener((msg) => {
     rebuildContextMenu();
   }
 });
+
+async function searchDefault() {
+  const { engines } = await browser.storage.local.get("engines");
+  if (!Array.isArray(engines)) return;
+
+  const engine = engines.find((e) => e.default === true && e.enabled !== false);
+  if (!engine) return;
+
+  const text = await getSelection();
+  if (!text) return;
+
+  const url = engine.url.replace("search_term", encodeURIComponent(text));
+  browser.tabs.create({ url });
+}
 
 async function rebuildContextMenu() {
   browser.contextMenus.removeAll();
