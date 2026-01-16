@@ -48,6 +48,8 @@ You can also export your search engines to a `.json`file to import later.
 4. So `ALT+c --> g` for Google and `ALT+c --> y` for YouTube.
 5. Or, simply use the context menu by right-clicking after selecting text and then choosing the search engine.
 
+You can also set any engine to be the default and use `ALT+x` keybind (configurable in settings) to directly search with it without using chords.
+
 ## Configuration
 
 In the provided `srch-quickstart-engines.json` file, URLs have been set up for some engines like Google, YouTube, Reddit, ChatGPT, Wikipedia etc.
@@ -61,7 +63,9 @@ An example engine rule would be,
   {
     "name": "Wikipedia",
     "url": "https://en.wikipedia.org/w/index.php?search=search_term",
-    "key": "w"
+    "key": "w",
+    "default": false,
+    "enabled": true
   }
 ]
 ```
@@ -69,6 +73,10 @@ An example engine rule would be,
 1. The `name` field decides the context menu item name. Here, "Wikipedia" will be shown.
 2. The `url` field is basically the "search engine". Your selected text will replace the `search_term`.
 3. The `key` field is "suffix key" used for chord key bindings. Here "w" means, "Wikipedia" search will be performed on `LEADER --> w` (default `LEADER`=`ALT+c`)
+4. The `default` field sets an engine as the default when set to `true`. Only 1 default is allowed. Implicitly all engines are `default = false`.
+5. The `enabled` field enables/disables the engine. Implicitly all engines are set to `enabled = true`. To disable an engine set this to `false`.
+
+For the implicit fields like `default` and `enabled`, you don't have to include them in every engine. Only add them when inverting their default behaviour.
 
 ---
 
